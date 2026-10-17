@@ -304,5 +304,5 @@ nagato-desktop-pet/
 
 - 本项目为**个人学习与同人创作**用途，角色形象来自《碧蓝航线》（长门），
   图片素材由本地 AI 生成/改绘，不作为商业用途。
-- 请勿把 `config.json`、`.credentials.yaml`、`memory.json` 等**含密钥或个人数据**的文件提交到公开仓库。
+- 请勿把 `config.json`、任何密钥文件、`memory.json` 等**含密钥或个人数据**的文件提交到公开仓库。
 - 使用第三方 API（DeepSeek / 火山方舟）请自行遵守其服务条款并注意费用。

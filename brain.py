@@ -29,7 +29,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CONFIG_FILE = ROOT / "config.json"
 DSH_HOME = Path(os.environ.get("DSH_HOME", Path.home() / ".dsh"))
-CRED_FILE = DSH_HOME / ".credentials.yaml"
+CRED_FILE = DSH_HOME / "credentials.json"
 
 API_BASE = "https://api.deepseek.com"
 DEFAULT_MODEL = "deepseek-chat"
@@ -372,7 +372,7 @@ VOLC_HOST = "billing.volcengineapi.com"
 def _cred_ref(name: str) -> str:
     """从 DSH 凭据库 refs: 段里取一个值（不打印、不外传）。"""
     try:
-        path = Path.home() / ".dsh" / ".credentials.yaml"
+        path = Path.home() / ".dsh" / "credentials.json"
         if not path.exists():
             return ""
         inside = False
@@ -462,7 +462,7 @@ def fetch_ark_balance(cfg: dict) -> dict:
 # ------------------------------------------------------------------ 免费生图（Pollinations shim）
 SHIM_URL = "http://127.0.0.1:8791"
 SHIM_CMD = r"./pollinations-shim\start.cmd"
-IMAGE_DIR = Path(r"D:\dsh-agent\images")
+IMAGE_DIR = Path(r".\images")
 
 
 def _shim_alive(timeout: float = 1.5) -> bool:
