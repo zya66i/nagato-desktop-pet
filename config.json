@@ -1,0 +1,16 @@
+{
+  "api_base": "https://api.deepseek.com",
+  "model": "deepseek-chat",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "vision_model": "doubao-seed-2-1-lite-260915",
+  "ark_api_key_env": "ARK_API_KEY",
+  "send_window_title": false,
+  "temperature": 0.8,
+  "max_tokens": 600,
+  "memory_limit": 40,
+  "api_key": "",
+  "ark_api_key": "",
+  "ark_secret_key": "",
+  "volc_account_id": "",
+  "_comment": "密钥建议用环境变量 DEEPSEEK_API_KEY / ARK_API_KEY；余额查询需自行填 volc_account_id 与 AK/SK"
+}

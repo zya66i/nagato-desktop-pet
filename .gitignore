@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+memory.json
+pet_state.json
+settings.json
+stats.json
+companion.log
+pet.log
+config.local.json
+.env

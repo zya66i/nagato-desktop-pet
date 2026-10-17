@@ -1,0 +1,131 @@
+{
+  "face_closed": {
+    "inside_band_diff": 13.12,
+    "outside_band_diff": 6.28
+  },
+  "face_surprised": {
+    "inside_band_diff": 28.58,
+    "outside_band_diff": 13.82
+  },
+  "walk_r1": {
+    "mode": "feet",
+    "char_diff": 97.66,
+    "src_bbox": [
+      457,
+      64,
+      1499,
+      1996
+    ],
+    "touches_crop_edge": false
+  },
+  "walk_r3": {
+    "mode": "feet",
+    "char_diff": 95.03,
+    "src_bbox": [
+      521,
+      58,
+      1340,
+      2006
+    ],
+    "touches_crop_edge": false
+  },
+  "walk_p2": {
+    "mode": "feet",
+    "char_diff": 96.73,
+    "src_bbox": [
+      521,
+      58,
+      1340,
+      2006
+    ],
+    "touches_crop_edge": false
+  },
+  "walk_s2": {
+    "mode": "feet",
+    "char_diff": 99.77,
+    "src_bbox": [
+      477,
+      64,
+      1468,
+      1996
+    ],
+    "touches_crop_edge": false
+  },
+  "idle_pose": {
+    "mode": "register",
+    "char_diff": 65.47,
+    "src_bbox": [
+      573,
+      53,
+      1502,
+      1997
+    ],
+    "touches_crop_edge": false
+  },
+  "lift": {
+    "mode": "register",
+    "char_diff": 107.93,
+    "src_bbox": [
+      491,
+      176,
+      1654,
+      1920
+    ],
+    "touches_crop_edge": false
+  },
+  "sleep_sit": {
+    "mode": "register",
+    "char_diff": 102.66,
+    "src_bbox": [
+      283,
+      116,
+      1903,
+      1879
+    ],
+    "touches_crop_edge": true
+  },
+  "sleep": {
+    "mode": "fit",
+    "char_diff": 113.69,
+    "src_bbox": [
+      38,
+      127,
+      2001,
+      1911
+    ],
+    "touches_crop_edge": false
+  },
+  "sleep2": {
+    "mode": "fit",
+    "char_diff": 119.61,
+    "src_bbox": [
+      0,
+      128,
+      2000,
+      1969
+    ],
+    "touches_crop_edge": false
+  },
+  "sleep_quilt": {
+    "mode": "fit",
+    "char_diff": 122.63,
+    "src_bbox": [
+      0,
+      128,
+      2000,
+      1968
+    ],
+    "touches_crop_edge": false
+  },
+  "cling_l": {
+    "mode": "fit",
+    "char_diff": 118.34,
+    "src_bbox": [
+      425,
+      0,
+      1743,
+      2047
+    ],
+    "touches_crop_edge": false
+  }
+}

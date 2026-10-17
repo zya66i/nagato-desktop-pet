@@ -1,0 +1,316 @@
+{
+  "version": 2,
+  "active": "nagato",
+  "window": {
+    "target_character_logical_height": 267,
+    "size_presets": [
+      180,
+      267,
+      360
+    ],
+    "always_on_top": true,
+    "click_through_transparent": true,
+    "remember_position": true
+  },
+  "behaviour": {
+    "roam": {
+      "enabled": false,
+      "speed_px_s": 70,
+      "walk_fps": 5.5,
+      "pause_s": [
+        4,
+        13
+      ],
+      "edge_margin": 24,
+      "chase_cursor_chance": 0.25,
+      "resume_after_drag_s": 6.0,
+      "bob": 0.014
+    },
+    "drag": {
+      "edge_snap_px": 90
+    },
+    "transition_seconds": 0.15,
+    "chat": {
+      "open_on": "double_click",
+      "reaction_on": "single_click",
+      "pause_roam_while_typing": true
+    },
+    "proactive": {
+      "enabled": true,
+      "mode": "model",
+      "every_minutes": [
+        6,
+        22
+      ],
+      "backoff_factor": 1.6,
+      "min_minutes": 4,
+      "max_minutes": 45,
+      "speak_chance": 0.6,
+      "actions": [
+        "sleep",
+        "cling_left",
+        "cling_right",
+        "walk",
+        "blink"
+      ],
+      "speech_seconds": 7
+    },
+    "face_overlay_bodies": [],
+    "walk_speed_px_s": 180
+  },
+  "characters": {
+    "nagato": {
+      "canvas": [
+        1024,
+        1024
+      ],
+      "character_height_px": 950,
+      "anchor_bottom_margin_px": 51,
+      "layers": {
+        "base": "assets/master/nagato_master.png"
+      },
+      "parts": {
+        "eyes_closed": "assets/parts/face_closed.png",
+        "face_surprised": "assets/parts/face_surprised.png",
+        "walk_r1": "assets/parts/walk_r1.png",
+        "walk_r3": "assets/parts/walk_r3.png",
+        "walk_p2": "assets/parts/walk_p2.png",
+        "walk_p2_l": "assets/parts/walk_p2_l.png",
+        "walk_s2": "assets/parts/walk_s2.png",
+        "walk_s2_l": "assets/parts/walk_s2_l.png",
+        "walk_l1": "assets/parts/walk_l1.png",
+        "walk_l3": "assets/parts/walk_l3.png",
+        "sleep_sit": "assets/parts/sleep_sit.png",
+        "sleep": "assets/parts/sleep.png",
+        "sleep2": "assets/parts/sleep2.png",
+        "sleep_quilt": "assets/parts/sleep_quilt.png",
+        "cling_l": "assets/parts/cling_l.png",
+        "cling_r": "assets/parts/cling_r.png",
+        "lift": "assets/parts/lift.png",
+        "idle_pose": "assets/parts/idle_pose.png",
+        "walkup_a": "assets/parts/walkup_a.png",
+        "walkup_b": "assets/parts/walkup_b.png",
+        "walkdown_a": "assets/parts/walkdown_a.png",
+        "walkdown_b": "assets/parts/walkdown_b.png",
+        "blink": "assets/parts/face_closed.png",
+        "drag": "assets/parts/lift.png",
+        "cling_left": "assets/parts/cling_l.png",
+        "cling_right": "assets/parts/cling_r.png",
+        "daze": "assets/parts/idle_pose.png"
+      },
+      "motions": {
+        "breathe": {
+          "kind": "breathe",
+          "period": 3.4,
+          "amount": 0.014
+        },
+        "click_pop": {
+          "kind": "pop",
+          "period": 0.42,
+          "amount": 0.075,
+          "decay": 3.4
+        },
+        "drag_tilt": {
+          "kind": "tilt",
+          "max_deg": 10.0,
+          "stretch": 0.035,
+          "smooth": 0.22,
+          "dangle_deg": 2.6,
+          "dangle_period": 1.7
+        },
+        "sleep_breathe": {
+          "kind": "breathe",
+          "period": 5.2,
+          "amount": 0.008
+        }
+      },
+      "actions": {
+        "idle": {
+          "motions": [
+            "breathe"
+          ]
+        },
+        "walk": {
+          "frames_right": [
+            "walk_r3",
+            "walk_r1",
+            "walk_r3",
+            "walk_s2"
+          ],
+          "frames_left": [
+            "walk_l3",
+            "walk_l1",
+            "walk_l3",
+            "walk_s2_l"
+          ],
+          "fps": 5.0,
+          "distance_px": [
+            150,
+            350
+          ],
+          "motions": [
+            "breathe"
+          ]
+        },
+        "blink": {
+          "overlay": "eyes_closed",
+          "duration": 0.17,
+          "every": [
+            3.5,
+            8.0
+          ]
+        },
+        "click": {
+          "on": "single_click",
+          "duration": 0.75,
+          "overlay": "face_surprised",
+          "overlay_duration": 0.7,
+          "motions": [
+            "click_pop"
+          ]
+        },
+        "drag": {
+          "on": "dragging",
+          "body": "lift",
+          "motions": [
+            "drag_tilt"
+          ]
+        },
+        "sleep": {
+          "frames": [
+            "sleep_sit",
+            "sleep2"
+          ],
+          "frames_quilt": [
+            "sleep_sit",
+            "sleep_quilt"
+          ],
+          "fps": 0.8,
+          "loop": false,
+          "duration": 1800,
+          "motions": [
+            "sleep_breathe"
+          ]
+        },
+        "cling_left": {
+          "body": "cling_l",
+          "duration": 3600,
+          "window_edge": "left",
+          "return_with": "walk",
+          "motions": []
+        },
+        "cling_right": {
+          "body": "cling_r",
+          "duration": 3600,
+          "window_edge": "right",
+          "return_with": "walk",
+          "motions": []
+        },
+        "daze": {
+          "body": "idle_pose",
+          "duration": 180.0,
+          "motions": [
+            "breathe"
+          ]
+        },
+        "go_up": {
+          "duration": 2.0,
+          "motions": [
+            "breathe"
+          ],
+          "frames": [
+            "walkup_a",
+            "walkup_b"
+          ],
+          "fps": 5.0
+        },
+        "go_down": {
+          "duration": 2.0,
+          "motions": [
+            "breathe"
+          ],
+          "frames": [
+            "walkdown_a",
+            "walkdown_b"
+          ],
+          "fps": 5.0
+        },
+        "go_left": {
+          "duration": 2.0,
+          "motions": [
+            "breathe"
+          ]
+        },
+        "go_right": {
+          "duration": 2.0,
+          "motions": [
+            "breathe"
+          ]
+        }
+      }
+    }
+  },
+  "skins": {
+    "default": {
+      "label": "和服（默认）",
+      "parts": {
+        "eyes_closed": "assets/parts/face_closed.png",
+        "face_surprised": "assets/parts/face_surprised.png",
+        "walk_r1": "assets/parts/walk_r1.png",
+        "walk_r3": "assets/parts/walk_r3.png",
+        "walk_p2": "assets/parts/walk_p2.png",
+        "walk_p2_l": "assets/parts/walk_p2_l.png",
+        "walk_s2": "assets/parts/walk_s2.png",
+        "walk_s2_l": "assets/parts/walk_s2_l.png",
+        "walk_l1": "assets/parts/walk_l1.png",
+        "walk_l3": "assets/parts/walk_l3.png",
+        "sleep_sit": "assets/parts/sleep_sit.png",
+        "sleep": "assets/parts/sleep.png",
+        "sleep2": "assets/parts/sleep2.png",
+        "sleep_quilt": "assets/parts/sleep_quilt.png",
+        "cling_l": "assets/parts/cling_l.png",
+        "cling_r": "assets/parts/cling_r.png",
+        "lift": "assets/parts/lift.png",
+        "idle_pose": "assets/parts/idle_pose.png",
+        "walkup_a": "assets/parts/walkup_a.png",
+        "walkup_b": "assets/parts/walkup_b.png",
+        "walkdown_a": "assets/parts/walkdown_a.png",
+        "walkdown_b": "assets/parts/walkdown_b.png",
+        "blink": "assets/parts/face_closed.png",
+        "drag": "assets/parts/lift.png",
+        "cling_left": "assets/parts/cling_l.png",
+        "cling_right": "assets/parts/cling_r.png",
+        "daze": "assets/parts/idle_pose.png"
+      },
+      "base": "assets/master/nagato_master.png"
+    },
+    "wedding": {
+      "label": "华服",
+      "parts": {
+        "idle_pose": "assets/skins/wedding/parts/idle_pose.png",
+        "walk_r1": "assets/skins/wedding/parts/walk_r1.png",
+        "walk_l1": "assets/skins/wedding/parts/walk_r1_m.png",
+        "walk_r3": "assets/skins/wedding/parts/walk_r3.png",
+        "walk_l3": "assets/skins/wedding/parts/walk_r3_m.png",
+        "walk_s2": "assets/skins/wedding/parts/walk_s2.png",
+        "walk_s2_l": "assets/skins/wedding/parts/walk_s2_m.png",
+        "blink_frame": "assets/skins/wedding/parts/blink_frame.png",
+        "sleep_sit": "assets/skins/wedding/parts/sleep_sit.png",
+        "sleep2": "assets/skins/wedding/parts/sleep2.png",
+        "sleep_quilt": "assets/skins/wedding/parts/sleep_quilt.png",
+        "cling_l": "assets/skins/wedding/parts/cling_l.png",
+        "cling_r": "assets/skins/wedding/parts/cling_r.png",
+        "lift": "assets/skins/wedding/parts/lift.png",
+        "walkup_a": "assets/skins/wedding/parts/walkup_a.png",
+        "walkup_b": "assets/skins/wedding/parts/walkup_b.png",
+        "walkdown_a": "assets/skins/wedding/parts/walkdown_a.png",
+        "walkdown_b": "assets/skins/wedding/parts/walkdown_b.png",
+        "drag": "assets/skins/wedding/parts/lift.png",
+        "cling_left": "assets/skins/wedding/parts/cling_l.png",
+        "cling_right": "assets/skins/wedding/parts/cling_r.png",
+        "daze": "assets/skins/wedding/parts/idle_pose.png"
+      },
+      "base": "assets/skins/wedding/master.png"
+    }
+  }
+}
